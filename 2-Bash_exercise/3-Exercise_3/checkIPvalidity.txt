@@ -1,0 +1,26 @@
+#!/bin/bash
+
+rm -f vali_ip.txt invali_ip.txt
+. isvalidip
+
+for ip in $@
+do
+	if isvalidip $ip
+	then
+		echo $ip >> vali_ip.txt
+	else
+		echo $ip >> invali_ip.txt
+	fi
+done
+
+if [[ -s vali_ip.txt ]]
+then
+	echo Valid IP address are as follows.
+	cat<vali_ip.txt
+fi
+
+if [[ -s invali_ip.txt ]]
+then
+	echo Invalid IP address are as follows. 
+	cat<invali_ip.txt
+fi
