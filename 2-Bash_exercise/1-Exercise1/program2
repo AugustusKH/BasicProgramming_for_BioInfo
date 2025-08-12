@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep "\<Bangkok\>" pt | sort -k 2,3 > Bankokpatient.txt

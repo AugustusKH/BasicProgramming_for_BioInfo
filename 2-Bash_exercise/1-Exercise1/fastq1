@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rm -rf results
+mkdir results
+
+wc -l sample1.fastq | awk '{ print $2 " " $1 }' > results/linecount.txt
+wc -l sample2.fastq | awk '{ print $2 " " $1 }' >> results/linecount.txt
+wc -l sample3.fastq | awk '{ print $2 " " $1 }' >> results/linecount.txt
+wait
+
+echo "Total" $((`wc -l sample1.fastq | awk '{ print $1 }'` + `wc -l sample2.fastq | awk '{ print $1 }'` + `wc -l sample3.fastq | awk '{ print $1 }'`)) >> results/linecount.txt
+wait
+
+sed -n 9,16p sample1.fastq > sample1_r34.fastq
+sed -n 9,16p sample2.fastq > sample2_r34.fastq
+sed -n 9,16p sample3.fastq > sample3_r34.fastq
