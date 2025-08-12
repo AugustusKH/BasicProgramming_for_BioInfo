@@ -1,0 +1,4 @@
+sample1.fastq 100
+sample2.fastq 80
+sample3.fastq 40
+Total 220
