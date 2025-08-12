@@ -1,0 +1,10 @@
+zebra
+horse
+alligator
+elephant
+dog
+cat
+lion
+duck
+dolphin
+Saccharomyces
